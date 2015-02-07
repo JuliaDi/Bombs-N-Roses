@@ -10,13 +10,13 @@ public class Board
 {
     /**
      * Instantiates a Board object.
-     * @param canvas a two dimensional boolean array which encapsulates
+     * @param canvasSize size of a two dimensional boolean array which encapsulates
      *               the game canvas.
      * @param mrStruggle Snake
      */
-    public Board(boolean[][] canvas, Snake mrStruggle)
+    public Board(int canvasSize, Snake mrStruggle)
     {
-        this.canvas = canvas;
+        canvas = new boolean[canvasSize][canvasSize];
         Iterator myItr = mrStruggle.getIterator();
         while(myItr.hasNext())
         {

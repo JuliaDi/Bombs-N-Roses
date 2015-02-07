@@ -13,16 +13,20 @@ public class Snake
      * it at index (0,0) with a velocityX of 1 and a velocityY of 0.
      * @param length length of the snake
      */
-    public Snake(int length, Board canvas)
+    public Snake(int length)
     {
         this.length = length;
-        this.canvas = canvas;
         //the snake is instantiated at 0,0 with a direction to the right
         occupied = new LinkedList<Position>();
         velocityX = 1;
         velocityY = 0;
         current = new Position(START_X, START_Y);
         occupied.add(current);
+    }
+
+    public void setBoard(Board canvas)
+    {
+        this.canvas = canvas;
     }
 
     /**
@@ -77,12 +81,13 @@ public class Snake
     }
 
 
+
     private int length;
     private Board canvas;
     private LinkedList<Position> occupied;
     private Position current;
     private int velocityX;
     private int velocityY;
-    private static final int START_X = 0;
-    private static final int START_Y= 0;
+    private static final int START_X = 10;
+    private static final int START_Y= 10;
 }
